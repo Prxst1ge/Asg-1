@@ -1,0 +1,381 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #111;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Menu Icon */
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Active Menu Icon State */
+.menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Menu Styles */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  justify-content: center;
+  gap: 20px;
+  background-color: #000;
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.menu.active {
+  transform: translateY(0);
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  color: #ff4081;
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #111;
+}
+
+.hero .logo-container h1 {
+  font-size: 7rem;
+  letter-spacing: 5px;
+  font-weight: bold;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px 20px;
+  background-color: #111;
+}
+
+.info-section article {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeUp 1s ease-in-out forwards;
+}
+
+.info-section article:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.info-section article:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.info-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #000;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+footer nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+footer nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+footer nav ul li a:hover {
+  color: #f39c12;
+  transform: scale(1.1);
+}
+
+/* Music Page Styles */
+.music-section {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.music-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.music-section .subheading {
+  background-color: #333;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 0;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* General Album Section Styles */
+.album-section {
+  display: flex;
+  justify-content: space-evenly; /* Space between items */
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  background-color: #111; /* Matches the black theme */
+}
+
+/* Album Box Styles */
+.album {
+  text-align: center;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds hover effect */
+}
+
+.album-box {
+  width: 250px; /* Adjust the size of the album */
+  height: 250px;
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+.album-box img {
+  width: 100%; /* Makes image responsive */
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits within the box */
+  border-radius: 8px;
+}
+
+.album p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Hover Effects for Album */
+.album:hover {
+  transform: translateY(-10px); /* Slightly lifts the album on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+.album-box img:hover {
+  filter: brightness(1.2); /* Brightens the image slightly */
+}
+
+/* Page transition effect */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0; /* Start fully transparent */
+  pointer-events: none; /* Prevent interaction */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+  z-index: 9999;
+}
+
+.page-transition.active {
+  opacity: 1; /* Becomes visible */
+  pointer-events: auto; /* Allow interaction during transition */
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .menu a {
+    font-size: 1.5rem;
+  }
+
+  .hero .logo-container h1 {
+    font-size: 4rem;
+  }
+
+  .album-box {
+    width: 80%;
+    height: auto;
+  }
+
+  .album-section {
+    flex-direction: column;
+  }
+}
+
+/* Tours Page Header */
+.tours-header {
+  text-align: center;
+  color: white;
+  background-color: #111;
+  padding: 20px 0;
+}
+
+.tours-header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.tours-header .subhead {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* Tours Grid Section */
+.tours-section, .events-section {
+  padding: 40px 20px;
+}
+
+.tours-section h2, .events-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.tours-grid, .events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background-color: #222;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .tours-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .tours-header .subhead {
+    font-size: 1.2rem;
+  }
+
+  .event-card {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+
+
