@@ -8,32 +8,34 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="menu-icon">
-      <span></span>
-      <span></span>
-      <span></span>
+  <!-- Hamburger Menu -->
+  <div class="menu-icon" >
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="menu hidden">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="tours.html">Tours</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="merch.html">Merch</a></li>
+  </ul>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="Images/hero-background.webp" alt="Hero Background" class="hero-image">
+    <div class="logo-container">
+      <h1>YOASOBI</h1>
     </div>
-    <ul class="menu hidden">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="tours.html">Tours</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="merch.html">Merch</a></li>
-    </ul>
-  </header>
+  </section>
 
+  <!-- Main Content -->
   <main>
-    <section class="hero">
-      <div class="logo-container">
-        <h1>YOASOBI</h1>
-      </div>
-    </section>
-
     <section class="info-section">
       <article>
         <h2>About YOASOBI</h2>
-        <p>What to find out more about YOASOBI?</p>
+        <p>Want to find out more about YOASOBI?</p>
       </article>
       <article>
         <h2>Latest News</h2>
@@ -41,11 +43,12 @@
       </article>
       <article>
         <h2>Popular Music</h2>
-        <p>"Yoru ni Kakeru" and "Kaibutsu" </p>
+        <p>"Yoru ni Kakeru" and "Kaibutsu"</p>
       </article>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2024 Yoasobi Website. All rights reserved.</p>
     <nav>
@@ -59,26 +62,10 @@
     </nav>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    // Function to toggle the menu
-    function toggleMenu() {
-      const menu = document.querySelector('.menu');
-      if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        menu.classList.add('active');
-      } else {
-        menu.classList.add('hidden');
-        menu.classList.remove('active');
-      }
-    }
-
-    // Attach the event listener for the menu toggle
-    const menuIcon = document.querySelector('.menu-icon');
-    menuIcon.addEventListener('click', toggleMenu);
-  </script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
+
 
 
 

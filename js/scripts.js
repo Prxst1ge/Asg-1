@@ -1,22 +1,30 @@
 // Function to toggle the menu
 function toggleMenu() {
-  // Select the menu element by its class name
+  // Select the menu element
   const menu = document.querySelector('.menu');
 
-  // Check if the menu already has the 'hidden' class
+  // Toggle the hidden and active classes
   if (menu.classList.contains('hidden')) {
-    // Remove the 'hidden' class to show the menu
     menu.classList.remove('hidden');
     menu.classList.add('active');
   } else {
-    // Add the 'hidden' class to hide the menu
     menu.classList.add('hidden');
     menu.classList.remove('active');
   }
 }
 
-// Attach an event listener to the menu icon
+// Attach the click event listener to the menu icon
 const menuIcon = document.querySelector('.menu-icon');
 menuIcon.addEventListener('click', toggleMenu);
+
+// Close the menu when a menu link is clicked (optional enhancement)
+const menuLinks = document.querySelectorAll('.menu a');
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const menu = document.querySelector('.menu');
+    menu.classList.add('hidden');
+    menu.classList.remove('active');
+  });
+});
 
   
