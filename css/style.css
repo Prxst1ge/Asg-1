@@ -175,32 +175,119 @@ body {
   }
 }
 
-
 /* Info Section */
 .info-section {
   display: flex;
-  flex-direction: column;
-  gap: 50px;
-  padding: 50px 20px;
-  background-color: #111;
+  justify-content: center; /* Centers the content */
+  flex-wrap: wrap; /* Wraps items to the next line on smaller screens */
+  gap: 30px; /* Adjust the spacing between the boxes */
+  padding: 40px 20px;
+  background-color: #111; /* Dark background */
 }
 
+/* Article Styling */
 .info-section article {
-  background-color: #222;
+  background-color: #222; /* Darker box color */
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  transform: translateY(20px);
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow for emphasis */
+  transform: translateY(15px);
   opacity: 0;
   animation: fadeUp 1s ease-in-out forwards;
+  max-width: 280px; /* Set consistent box width */
+  flex: 1 1 calc(25% - 40px); /* Allows flexibility, 4 items per row with spacing */
+  min-width: 200px; /* Ensures boxes are not too small on smaller screens */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
-.info-section article:nth-child(2) {
-  animation-delay: 0.2s;
+.info-section article:hover {
+  transform: translateY(0); /* Bring the box up slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Enhance shadow on hover */
 }
 
-.info-section article:nth-child(3) {
-  animation-delay: 0.4s;
+/* Images Styling */
+.info-image {
+  width: 100%; /* Make images responsive */
+  height: 160px; /* Consistent height for images */
+  border-radius: 8px; /* Rounded corners for images */
+  object-fit: cover; /* Ensures images scale well */
+  margin-bottom: 15px;
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.info-section article:hover .info-image {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+/* Headings */
+.info-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ff69b4; /* Add a pop of color for headings */
+  text-transform: uppercase; /* Make the headings stand out */
+}
+
+/* Paragraph Text */
+.info-section p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #ccc; /* Softer text color */
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .info-section article {
+    flex: 1 1 100%; /* Full width on smaller screens */
+    max-width: 100%;
+  }
+
+  .info-image {
+    height: 140px; /* Slightly smaller images for smaller screens */
+  }
+
+  .info-section h2 {
+    font-size: 1.2rem; /* Adjust heading size */
+  }
+
+  .info-section p {
+    font-size: 0.85rem; /* Adjust text size */
+  }
+}
+
+
+/* Animated Borders */
+.info-section article::before,
+.info-section article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  z-index: -1;
+  transform: scale(1.05);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.info-section article:hover::before,
+.info-section article:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 @keyframes fadeUp {
@@ -214,14 +301,16 @@ body {
   }
 }
 
-.info-section h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+/* Remove default link styling */
+.info-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  display: inline-block; /* Ensure articles remain as blocks */
+  transition: transform 0.3s ease; /* Smooth scale effect */
 }
 
-.info-section p {
-  font-size: 1rem;
-  line-height: 1.6;
+.info-link:hover {
+  transform: scale(1.02); /* Slightly enlarge the whole section on hover */
 }
 
 /* Footer Styles */
@@ -255,9 +344,10 @@ footer nav ul li a {
 }
 
 footer nav ul li a:hover {
-  color: #ff4081;
+  color: #fca947;
   transform: scale(1.1);
 }
+
 
 /* Music Page Styles */
 .music-section {

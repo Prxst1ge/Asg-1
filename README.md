@@ -3,7 +3,7 @@
 # Yoasobi Website
 
 ## Project Overview
-This project is a website dedicated to the Japanese music duo Yoasobi. The site showcases their music, upcoming tours, member details, and Yoasobi-themed merchandise.
+This project is an english version of the website dedicated to the Japanese music duo Yoasobi. (Current Official Yoasobi website is in Japanese). The site showcases their music, upcoming tours, member details, and Yoasobi-themed merchandise.
 
 ## Idea Description
 The idea behind this website is to provide an engaging platform for Yoasobi fans to explore and interact with content about the duo. The site features:
@@ -17,7 +17,7 @@ The website is designed to offer a user-friendly experience, with a clean and co
 ## Technologies Used
 - HTML
 - CSS
-- Basic JavaScript (Not implemented yet)
+- Basic JavaScript
 
 ## Project Structure
 - 'index.html': Homepage with an introduction to Yoasobi.
