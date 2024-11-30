@@ -17,7 +17,7 @@ function toggleMenu() {
 const menuIcon = document.querySelector('.menu-icon');
 menuIcon.addEventListener('click', toggleMenu);
 
-// Close the menu when a menu link is clicked (optional enhancement)
+// Close the menu when a menu link is clicked
 const menuLinks = document.querySelectorAll('.menu a');
 menuLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -26,5 +26,7 @@ menuLinks.forEach(link => {
     menu.classList.remove('active');
   });
 });
+
+
 
   
