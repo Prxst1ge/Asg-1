@@ -9,6 +9,10 @@ This project is an english version of the website dedicated to the Japanese musi
 The design process focused on delivering a user-centered experience. The primary audience includes Yoasobi fans who are looking for merchandise, music, or information about upcoming tours. This project ensures they can achieve their goals quickly and easily.
 
 User Stories:
+As a new visitor, I want to learn about Yoasobi’s background, so that I can understand their music and connect with them.
+As a non-Japanese-speaking fan, I want a Yoasobi English page, so that I can easily access information and explore their website, which is currently mostly in Japanese.
+As a concertgoer, I want to check upcoming tour dates, so that I can plan to attend their events.
+As a user on mobile, I want the website to be fully responsive, so that I can browse comfortably on any device.
 As a fan, I want to browse and purchase Yoasobi merchandise, so that I can support the band and collect exclusive items.
 As a new visitor, I want to learn about Yoasobi’s background, so that I can understand their music and connect with them.
 As a concertgoer, I want to check upcoming tour dates, so that I can plan to attend their events.
@@ -16,6 +20,7 @@ As a user on mobile, I want the website to be fully responsive, so that I can br
 
 Wireframes:
 Used Figma to create a low-fidelity wireframe that serves as a layout for the official website.
+Link to figma wireframes: https://www.figma.com/design/uqnjPEIjb1vAjLKjMSfk7k/Module_S10267303J_JavierLeo_Assg1_wireframe?node-id=0-1&t=lf28lojiQhgQDMmz-1
 
 Rationale: 
 
