@@ -8,6 +8,48 @@ body {
   overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
+/* Home Button Styling */
+.home-button {
+  position: fixed;
+  top: 20px; /* Distance from top */
+  right: 20px; /* Distance from right */
+  z-index: 1000; /* Ensure it's on top */
+  font-size: 2rem; /* Adjust size */
+  font-weight: bold;
+  text-decoration: none; /* Remove underline */
+  background-image: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red,
+    orange,
+    yellow
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: smoothRainbow 10s infinite linear; /* Reuse your rainbow animation */
+  transition: transform 0.3s ease-in-out;
+}
+
+.home-button:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+@keyframes smoothRainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
 /* Menu Icon */
 .menu-icon {
   position: fixed;
